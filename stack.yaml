@@ -1,0 +1,8 @@
+resolver: nightly-2021-12-16
+compiler: ghc-9.2.1
+
+ghc-options:
+  basement: -j8
+
+packages:
+- '.'

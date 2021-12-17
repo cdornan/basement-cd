@@ -1,23 +1,22 @@
-name:                basement
-version:             0.0.12
-x-revision: 1
+name:                basement-cd
+version:             0.0.12.1
 synopsis:            Foundation scrap box of array & string
 description:         Foundation most basic primitives without any dependencies
 license:             BSD3
 license-file:        LICENSE
 copyright:           2015-2017 Vincent Hanquez <vincent@snarc.org>
                    , 2017-2018 Foundation Maintainers
-maintainer:          vincent@snarc.org
+maintainer:          chris@chrisdornan.com
 category:            Web
 build-type:          Simple
-homepage:            https://github.com/haskell-foundation/foundation#readme
-bug-reports:         https://github.com/haskell-foundation/foundation/issues
+homepage:            https://github.com/cdornan/basement-cd#readme
+bug-reports:         https://github.com/cdornan/basement-cd/issues
 cabal-version:       1.18
 extra-source-files:  cbits/*.h cbits/basement_rts.c
 
 source-repository head
   type: git
-  location: https://github.com/haskell-foundation/foundation
+  location: https://github.com/cdornan/basement-cd
   subdir: basement
 
 library
@@ -137,11 +136,13 @@ library
 
                      Basement.Terminal.Size
 
+                     Basement.HeadHackageUtils
+
   -- support and dependencies
   if impl(ghc < 8.0)
     buildable: False
   else
-    build-depends:     base >=4.9 && <4.16
+    build-depends:     base >=4.9 && <4.17
                      , ghc-prim
     if os(windows)
       build-depends:   Win32
